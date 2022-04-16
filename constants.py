@@ -5,6 +5,7 @@ class Pages():
 
 BACKGROUND_PATH = 'images\\background #1.jpg'
 GROUND_PATH = 'images\\ground.png'
+BIRD_PATH = 'images\\bird_icon.png'
 
 WINDOW_WIDTH = 540
 WINDOW_HEIGHT = 960
@@ -31,3 +32,8 @@ START_Y = 610
 
 GROUND_X = 0
 GROUND_Y = 750
+
+BIRD_WIDTH = 150
+BIRD_HEIGHT = 150
+BIRD_X = 220
+BIRD_Y = 400

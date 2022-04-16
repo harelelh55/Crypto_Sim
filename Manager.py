@@ -16,8 +16,10 @@ class Manager:
         self.background_img = pygame.transform.scale(background_img, (WINDOW_WIDTH, WINDOW_HEIGHT))
         ground_img = pygame.image.load(GROUND_PATH)
         self.ground_img = ground_img
+        bird_img = pygame.image.load(BIRD_PATH).convert_alpha()
+        self.bird_img = pygame.transform.scale(bird_img, (BIRD_WIDTH, BIRD_HEIGHT))
 
-    def show_home(self):
+    def show_home(self, ground_scroll):
         self.screen.blit(self.background_img, (HOME_LOCATION_X, HOME_LOCATION_Y))
 
         header_font = pygame.font.SysFont(FONT_NAME, MAIN_HEADER_TEXT_SIZE)
@@ -29,7 +31,12 @@ class Manager:
         self.screen.blit(header_font.render('START', True, START_COLOR),
                          (START_X, START_Y))
         self.screen.blit(self.ground_img, (ground_scroll, GROUND_Y))
+        self.screen.blit(self.bird_img, (BIRD_X, BIRD_Y))
 
-    def show_live(self):
+    def show_live(self, ground_scroll):
         self.screen.blit(self.background_img, (HOME_LOCATION_X, HOME_LOCATION_Y))
         self.screen.blit(self.ground_img, (ground_scroll, GROUND_Y))
+        self.screen.blit(self.bird_img, (BIRD_X, BIRD_Y))
+
+    def make_bird_fly(self, bird_x):
+        bird_x += 5
